@@ -1,6 +1,26 @@
 #globe {
   position: absolute;
-  left: 600px;
-  top: -250px;
-  cursor: grab;
+  left: 500px;
+  top: -150px;
 }
+
+ .view-site{
+    height: 80px;
+    width: 350px;
+    z-index: 100;
+    background-color: transparent;
+    color: white;
+    font-size: 50px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    top: 0;
+    left: 50px;
+
+    &:hover{
+      background: white;
+      color: black;
+      transition: 0.5s all;
+    }
+  }

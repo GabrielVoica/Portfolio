@@ -13,10 +13,10 @@ $panel-shadow-color: #000000;
   &:before {
     content: "";
     display: inline-block;
-    height: 650px;
+    height: 1000px;
     width: 100vw;
     position: absolute;
-    top: -300px;
+    top: -400px;
     left: -50px;
     transform: skewY(-20deg);
     animation: animate-gradient 10s forwards infinite;
@@ -29,6 +29,7 @@ $panel-shadow-color: #000000;
     color: rgb(255, 255, 255);
     text-shadow: 6px 8px black;
   }
+
 
   .word {
     display: flex;
