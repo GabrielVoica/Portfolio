@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Henry";
+  src: url("/assets/fonts/Lobster-Regular.ttf");
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(0, 0, 0);
+  font-family: Helvetica;
+  overflow-x: hidden;
+
+  app-home,
+  app-projects,
+  app-contact {
+    position: absolute;
+    top: 0;
+    left: 110px;
+  }
+}

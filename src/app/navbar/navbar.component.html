@@ -1,0 +1,25 @@
+<div class="navbar-wrapper">
+  <div #roundDeco class="round-deco"></div>
+  <nav class="navbar">
+    <ul class="navbar-links">
+      <li
+        #home
+        routerLink="/"
+        (click)="animateNav($event, 'home')"
+        class="navbar-link home active"
+      ></li>
+      <li
+        routerLink="/proyectos"
+        #projects
+        (click)="animateNav($event, 'projects')"
+        class="navbar-link projects"
+      ></li>
+      <li
+        routerLink="/contacto"
+        #contact
+        (click)="animateNav($event, 'contact')"
+        class="navbar-link contact"
+      ></li>
+    </ul>
+  </nav>
+</div>

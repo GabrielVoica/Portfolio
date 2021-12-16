@@ -1,0 +1,154 @@
+$panel-color: rgb(145, 23, 23);
+$panel-shadow-color: #000000;
+
+.home-banner-wrapper {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 30px;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 650px;
+    width: 100vw;
+    position: absolute;
+    top: -300px;
+    left: -50px;
+    transform: skewY(-20deg);
+    animation: animate-gradient 10s forwards infinite;
+    background: rgb(82, 3, 3);
+  }
+
+  .banner-text {
+    margin-left: 20px;
+    font-size: 50px;
+    color: rgb(240, 72, 72);
+    text-shadow: 6px 8px black;
+  }
+
+  .word {
+    display: flex;
+  }
+
+  .word-1 {
+    .panel {
+      transition: 0.2s all;
+      animation: text-animation 2s forwards ease-in-out;
+      animation-delay: var(--delay);
+
+      &:hover {
+        transform: scaleY(0.8) scaleX(1.1);
+        color: white !important;
+      }
+    }
+  }
+  .word-2 {
+    .panel {
+      transition: 0.5s all;
+      animation: text-animation-2 2s forwards;
+      animation-delay: var(--delay);
+
+      &:hover {
+        transform: scaleY(0.8) scaleX(1.1);
+        color: rgb(255, 255, 255) !important;
+      }
+    }
+  }
+
+  .panel {
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    font-size: 130px;
+    color: $panel-color;
+    position: relative;
+
+    &.l {
+      margin-right: 40px;
+    }
+
+    &:before {
+      position: relative;
+    }
+
+    &.g:before {
+      content: "G" !important;
+    }
+
+    &.a-1:before {
+      content: "a" !important;
+    }
+    &.b:before {
+      content: "b" !important;
+    }
+    &.r:before {
+      content: "r" !important;
+    }
+    &.i-1:before {
+      content: "i" !important;
+    }
+    &.e:before {
+      content: "e" !important;
+    }
+    &.l:before {
+      content: "l" !important;
+    }
+    &.v:before {
+      content: "V" !important;
+    }
+    &.o:before {
+      content: "o" !important;
+    }
+    &.i-2:before {
+      content: "i" !important;
+    }
+    &.c:before {
+      content: "c" !important;
+    }
+    &.a-2:before {
+      content: "a" !important;
+    }
+  }
+}
+
+@for $i from 0 to 12 {
+  .panel:nth-of-type(#{$i + 1}) {
+    --delay: #{$i * 0.1s};
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    color: $panel-color;
+  }
+
+  50% {
+    color: transparent;
+    text-shadow: none;
+  }
+
+  100% {
+    color: $panel-color;
+    text-shadow: 0px 10px $panel-shadow-color;
+  }
+}
+
+@keyframes text-animation-2 {
+  0% {
+    color: $panel-color;
+  }
+
+  50% {
+    color: transparent;
+    text-shadow: none;
+  }
+
+  100% {
+    color: $panel-color;
+    text-shadow: 0px 10px $panel-shadow-color;
+  }
+}
