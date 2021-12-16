@@ -42,7 +42,7 @@ $panel-shadow-color: #000000;
 
       &:hover {
         transform: scaleY(0.7) scaleX(1.1);
-        color: white !important;
+        color: rgb(255, 0, 0) !important;
       }
     }
   }
@@ -54,7 +54,7 @@ $panel-shadow-color: #000000;
 
       &:hover {
         transform: scaleY(0.7) scaleX(1.1);
-        color: rgb(255, 255, 255) !important;
+        color: rgb(255, 0, 0) !important;
       }
     }
   }
