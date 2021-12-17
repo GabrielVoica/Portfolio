@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       'animation',
       'translate-up 2s forwards'
     );
-    this.renderer.setStyle(this.button.nativeElement, 'display', 'none');
+    this.renderer.setStyle(this.button.nativeElement, 'animation', 'translate-up 2s forwards');
     this.global.setIntroAnimationState(true);
     
     setTimeout(()=>{

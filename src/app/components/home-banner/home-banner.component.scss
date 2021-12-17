@@ -38,9 +38,10 @@ $panel-shadow-color: #000000;
 
   .word-1 {
     .panel {
-      transition: 0.2s all;
+      transition: 0.6s all ease-in-out;
       animation: text-animation 2s forwards ease-in-out;
       animation-delay: var(--delay);
+      color: white;
 
       &:hover {
         transform: scaleY(0.7) scaleX(1.1);
@@ -50,7 +51,7 @@ $panel-shadow-color: #000000;
   }
   .word-2 {
     .panel {
-      transition: 0.2s all;
+      transition: 0.8s all;
       animation: text-animation-2 2s forwards;
       animation-delay: var(--delay);
 
