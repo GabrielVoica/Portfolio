@@ -20,7 +20,8 @@ $panel-shadow-color: #000000;
     left: -50px;
     transform: skewY(-20deg);
     animation: animate-gradient 10s forwards infinite;
-    background: rgb(82, 3, 3);
+      background: linear-gradient(120deg,rgb(59, 2, 2) 20%,rgb(88, 6, 6) 40%,rgb(0, 0, 0) 60%,rgb(0, 0, 0));
+
   }
 
   .banner-text {
@@ -128,7 +129,7 @@ $panel-shadow-color: #000000;
   }
 
   50% {
-    color: transparent;
+     color: rgb(255, 0, 0);
     text-shadow: none;
   }
 
@@ -144,7 +145,7 @@ $panel-shadow-color: #000000;
   }
 
   50% {
-    color: transparent;
+    color: rgb(255, 0, 0);
     text-shadow: none;
   }
 
@@ -153,3 +154,5 @@ $panel-shadow-color: #000000;
     text-shadow: 4px 10px $panel-shadow-color;
   }
 }
+
+
