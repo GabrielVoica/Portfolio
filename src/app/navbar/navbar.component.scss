@@ -1,0 +1,144 @@
+$wrapper-color: rgb(170, 0, 0);
+$navbar-color: black;
+$round-link-deco-top: 8px;
+
+.navbar-wrapper {
+  width: 98px;
+  background: $wrapper-color;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  .round-deco {
+    width: 60px;
+    height: 60px;
+    background: $wrapper-color;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    border-radius: 100px 0px 0px 100px;
+  }
+
+  .navbar {
+    height: 100%;
+    width: 90px;
+    background: $navbar-color;
+
+    .navbar-links {
+      list-style-type: none;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .navbar-link {
+        height: 80px;
+        width: 90px;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        cursor: pointer;
+        z-index: 2;
+        position: relative;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:before {
+          content: "";
+          height: 80px;
+          width: 90px;
+          display: inline-block;
+          background-position: center !important;
+          background-repeat: no-repeat !important;
+          position: relative;
+          left: 15px;
+          opacity: 0;
+        }
+
+        &.active {
+          position: relative;
+          left: 15px;
+          transform: scale(1.1);
+
+          &:hover {
+            opacity: 1;
+          }
+
+          animation: translate-left 0.5s forwards;
+
+          &:before {
+            animation: appear 0.3s forwards;
+            animation-delay: 0.3s;
+          }
+
+          &.projects {
+            background: url("/assets/icons/projects.png");
+          }
+
+          &.contact {
+            background: url("/assets/icons/contact.png");
+          }
+        }
+
+        &.home {
+          background: url("/assets/icons/home.png");
+          &:before {
+            background: url("/assets/icons/home.png");
+          }
+        }
+
+        &.projects {
+          background: url("/assets/icons/projects.png");
+          &:before {
+            background: url("/assets/icons/projects.png");
+          }
+        }
+        &.contact {
+          background: url("/assets/icons/contact.png");
+          &:before {
+            background: url("/assets/icons/contact.png");
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes translate-left {
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    background: none;
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-active-home {
+  to {
+    top: 12px;
+  }
+}
+
+@keyframes animate-active-projects {
+  to {
+    top: 90px;
+  }
+}
+
+@keyframes animate-active-contact {
+  to {
+    top: 170px;
+  }
+}

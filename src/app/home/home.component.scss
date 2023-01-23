@@ -1,0 +1,59 @@
+.globe-container {
+  position: absolute;
+  left: 50%;
+  top: -150px;
+  height: 600px;
+  width: 600px;
+
+  @media(max-width: 1600px){
+    left: 400px;
+    transform: scale(0.8);
+  }
+
+  #globe {
+    position: absolute;
+    
+    transition: 0.5s all;
+
+  }
+}
+
+@keyframes move-earth {
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+.view-site {
+  height: 80px;
+  width: 350px;
+  z-index: 100;
+  background-color: white;
+  color: rgb(97, 7, 7);
+  font-size: 50px;
+  border: 1px solid white;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  box-shadow: 10px 10px 1px 5px rgba(255, 255, 255, 0.295);
+  left: 50px;
+  transition: 0.5s all;
+
+  &:hover {
+    background: white;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0);
+    text-shadow: 0px 0px rgb(0, 0, 0);
+  }
+}
+
+@keyframes translate-right {
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes translate-up {
+  to {
+    transform: translateY(-120vh);
+  }
+}

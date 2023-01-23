@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Henry";
+  src: url("/assets/fonts/Lobster-Regular.ttf");
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  p,h3{
+    margin: 0px 10px;
+  }
+}
+
+
+
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg,rgb(109, 8, 8) 20%,rgb(70, 5, 5) 40%,rgb(0, 0, 0) 60%,rgb(0, 0, 0));
+  font-family: Helvetica;
+
+
+
+  app-home,
+  app-projects,
+  app-contact,
+  app-home-content {
+    position: absolute;
+    top: 0;
+    left: 110px;
+  }
+}
+
+app-home-content{
+  width: 93%;
+  height: 200%;
+  background: white;
+  top: 30px !important;
+  border-radius: 6px;
+}
