@@ -12,10 +12,16 @@ export class HomeContentComponent implements OnInit {
 
   constructor(private global: GlobalServiceService, private router: Router) { }
 
+  selectedGame = "";
+
   ngOnInit(): void {
     if(this.global.getIntroAnimationState() == false){
       this.router.navigate(['']);
     }
+  }
+
+  setGame(game: string){
+    this.selectedGame = game;
   }
 
 }

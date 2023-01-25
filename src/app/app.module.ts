@@ -12,6 +12,8 @@ import { ComponentsModule } from './components/components.module';
 import { GlobeComponent } from './globe/globe.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
+import { GamesComponent } from './home-content/games/games.component';
+import { PongComponent } from './home-content/games/pong/pong.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
     ContactComponent,
     GlobeComponent,
     HomeContentComponent,
-    SpinWheelComponent
+    SpinWheelComponent,
+    GamesComponent,
+    PongComponent
   ],
   imports: [
     BrowserModule,

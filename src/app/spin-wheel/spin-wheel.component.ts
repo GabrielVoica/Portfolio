@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-spin-wheel',
@@ -9,14 +10,16 @@ export class SpinWheelComponent implements OnInit {
 
   constructor() { }
 
+  @Output() gameEmitter = new EventEmitter<string>();
+
   ngOnInit(): void {
   }
 
-  rotate(){
-    var min = 1024;
-  var max = 9999;
-  var deg = Math.floor(Math.random() * (max - min)) + min;
-  document.getElementById('box').style.transform = "rotate("+deg+"deg)";
-  }
+  deg = 0;
+  spinNum = 2850;
 
+  rotate(){
+   this.deg += this.spinNum;
+   document.getElementById('box').style.transform = "rotate("+this.deg+"deg)";
+  }
 }

@@ -18,8 +18,12 @@
     
         <p>En cualquier caso gracias por pasarte! Es un honor tenerte de invitado/a.</p>
 
+        {{selectedGame}}
+
     </div>
 
-    <app-spin-wheel></app-spin-wheel>
+    <app-spin-wheel (gameEmitter)="setGame($event)"></app-spin-wheel>
+
+    <app-games></app-games>
    
 </div>
