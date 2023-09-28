@@ -12,6 +12,6 @@ export class GamesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectedGame = "pong";
+  selectedGame = "search";
 
 }

@@ -15,6 +15,11 @@ export class PongComponent {
   public height = 400;
   public keyLeft = false;
   public keyRight = false;
+  public bounceRatio = 0.85;
+
+  public enemyLeft = false;
+  public enemyRight = false;
+
 
   public playerPad = {
    type: 'pad', 
@@ -23,27 +28,30 @@ export class PongComponent {
    posX: 285,
    posY: this.height - 30,
    radius: null,
-   velX: 0
+   velX: 0,
+   velY: 1
   };
 
   public enemyPad = {
     type: 'pad', 
     height: 8,
     width: 50,
-    posX: 372,
-    posY: 0,
+    posX: 145,
+    posY: 15,
     radius: null,
-    velX: 0
+    velX: 0,
+    velY: 1
   };
 
   public ball = {
     type: 'ball',
     height: 20,
     width: 20,
-    radius: 20,
-    posX: 300,
-    posY: 300,
-    velX: 0
+    radius: 5,
+    posX: 247,
+    posY: 137,
+    velX: 3,
+    velY: 3
   };
 
 
@@ -103,8 +111,25 @@ export class PongComponent {
 
   animate(){
     requestAnimationFrame(this.animate.bind(this));
-    this.ball.posX += 1;
-    this.ball.posY += 1;
+
+
+
+    if(this.ball.posX > (this.width - this.ball.radius)){
+      this.ball.velX = -this.ball.velX;
+    }
+    else if(this.ball.posX < this.ball.radius){
+      this.ball.velX = -this.ball.velX;
+    }
+
+    if(this.ball.posY > (this.height - this.ball.radius)){
+      this.ball.velY = -this.ball.velY;
+    }
+    else if(this.ball.posY < this.ball.radius){
+      this.ball.velY = -this.ball.velY;
+    }
+
+    this.ball.posX += this.ball.velX;
+    this.ball.posY += this.ball.velY;
 
     if(this.keyLeft){
       this.playerPad.posX -= 5;
@@ -112,6 +137,23 @@ export class PongComponent {
     else if(this.keyRight){
       this.playerPad.posX += 5;
     }
+
+    if(this.enemyPad.posX < (this.ball.posX - 25)){
+      this.enemyPad.posX += 1.7;
+    }
+    else{
+      this.enemyPad.posX -= 1.7;
+    }
+
+    window.setInterval(()=>{
+     if(this.bounceRatio < 1){
+      this.bounceRatio = 1.15
+     } 
+     else{
+      this.bounceRatio = 0.85;
+     }
+    },3000)
+
 
    this.addElements(); 
 }

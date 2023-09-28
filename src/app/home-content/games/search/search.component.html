@@ -1,0 +1,18 @@
+<div>
+    <button [class.active-orig]="originSelectActive" #setInitial (click)="handleInitialButton()">Set Origin</button>
+    <button [class.active-dest]="destinationSelectActive" #setDestination (click)="handleDestinationButton()">Set Destination</button>
+    <button>Add walls</button>
+    <button (click)="findPath()">Search</button>
+</div>
+
+<div class="node-grid">
+    <div
+    [class.origin-node]="node.isOrigin" 
+    [class.destination-node] = "node.isDestination"
+    [class.checked] = "node.alreadyChecked"
+    [class.tracked] = "node.tracked"
+    *ngFor="let node of nodes" 
+    class="node-item" 
+    (click)="handleClickedNode(node.id)">
+</div>
+</div>

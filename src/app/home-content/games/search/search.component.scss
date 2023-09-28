@@ -1,0 +1,39 @@
+
+button.active-orig{
+    background: green;
+}
+
+button.active-dest{
+    background: red;
+}
+
+
+.node-grid{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(40,15px);
+    .node-item{
+        width: 15px;
+        height: 15px;
+        border: 0.5px solid rgb(171, 171, 171);
+        font-size: 5px;
+        transition: 1s background;
+
+       
+        &.destination-node{
+            background: red;
+        }
+
+        &.checked{
+            background: cyan;
+        }
+
+        &.origin-node{
+            background: green;
+        }
+
+        &.tracked{
+            background: orange;
+        }
+    }
+}
