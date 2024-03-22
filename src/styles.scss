@@ -3,6 +3,13 @@
   src: url("/assets/fonts/Lobster-Regular.ttf");
 }
 
+
+:root{
+  --main-color: #008eff;
+  --home-banner-color: #008eff;
+  --body-color: rgb(161, 209, 255);
+}
+
 *{
   box-sizing: border-box;
   padding: 0;
@@ -13,6 +20,7 @@
 body{
   overflow-y: hidden;
   overflow-x: hidden;
+  background: var(--body-color) !important;
 
   p,h3{
     margin: 0px 10px;

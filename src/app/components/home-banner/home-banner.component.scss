@@ -20,7 +20,7 @@ $panel-shadow-color: #000000;
     left: -50px;
     transform: skewY(-20deg);
     animation: animate-gradient 10s forwards infinite;
-      background: linear-gradient(120deg,rgb(59, 2, 2) 20%,rgb(88, 6, 6) 40%,rgb(0, 0, 0) 60%,rgb(0, 0, 0));
+    background: var(--home-banner-color)
 
   }
 

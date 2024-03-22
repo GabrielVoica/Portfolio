@@ -22,6 +22,7 @@ export class HomeContentComponent implements OnInit {
 
   setGame(game: string){
     this.selectedGame = game;
+    console.log(this.selectedGame)
   }
 
 }

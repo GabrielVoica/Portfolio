@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-games',
@@ -9,9 +9,14 @@ export class GamesComponent implements OnInit {
 
   constructor() { }
 
+  @Input() selectedGame: String = '';
+
   ngOnInit(): void {
   }
 
-  selectedGame = "search";
+  setSelectedGame(game: String){
+    this.selectedGame = game;
+  }
+
 
 }

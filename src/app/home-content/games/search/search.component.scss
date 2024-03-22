@@ -11,15 +11,16 @@ button.active-dest{
 .node-grid{
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(40,15px);
+    grid-template-columns: repeat(40,25px);
+    background: white;
     .node-item{
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         border: 0.5px solid rgb(171, 171, 171);
         font-size: 5px;
         transition: 1s background;
 
-       
+
         &.destination-node{
             background: red;
         }

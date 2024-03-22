@@ -44,14 +44,14 @@ export class GlobeComponent implements OnInit, AfterViewInit {
   private geometry = new THREE.SphereGeometry(0.4, 64, 32);
   private material = new THREE.MeshStandardMaterial({ map: this.textureImage });
   private degrees = 0;
-  
+
 
   private sphere: THREE.Mesh = new THREE.Mesh(this.geometry, this.material);
 
   private orbital = new THREE.Mesh(
     new THREE.SphereGeometry(0.01, 24, 12),
     new THREE.MeshStandardMaterial({
-      metalness: 1,  
+      metalness: 1,
     })
   );
 
@@ -68,7 +68,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
     this.orbital.position.x = -0.55;
     this.orbital.position.y = 0;
 
-  
+
     const light = new THREE.PointLight(0xfffffff, 3, 450);
     light.position.set(100, 100, 100);
     this.scene.add(light);
