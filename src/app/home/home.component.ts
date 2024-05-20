@@ -17,12 +17,12 @@ import { GlobeComponent } from '../globe/globe.component';
 })
 export class HomeComponent implements OnInit {
   private renderer: Renderer2;
+  switcherVisible = false;
 
   constructor(renderer: Renderer2, private router: Router, private global: GlobalServiceService) {
     this.renderer = renderer;
   }
 
-  @ViewChild('globe_container') globe: ElementRef;
   @ViewChild('banner_container') banner: ElementRef;
   @ViewChild('button') button: ElementRef;
 
@@ -32,14 +32,18 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  toggleSwitcher(){
+    this.switcherVisible = !this.switcherVisible;
+  }
+
+  setTheme(theme){
+   document.querySelector('body').removeAttribute('class');
+   document.querySelector('body').classList.add(theme)
+  }
+
 
 
   moveItems() {
-    this.renderer.setStyle(
-      this.globe.nativeElement,
-      'animation',
-      'translate-right 4s forwards'
-    );
     this.renderer.setStyle(
       this.banner.nativeElement,
       'animation',
@@ -47,7 +51,7 @@ export class HomeComponent implements OnInit {
     );
     this.renderer.setStyle(this.button.nativeElement, 'animation', 'translate-up 2s forwards');
     this.global.setIntroAnimationState(true);
-    
+
     setTimeout(()=>{
       this.router.navigate(['/info']);
       document.body.style.overflowY = "visible";

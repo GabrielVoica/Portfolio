@@ -20,7 +20,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
   @Input() public rotationSpeedX: number = 0.00001;
   @Input() public rotationSpeedY: number = 0.00001;
   @Input() public size: number = 200;
-  @Input() public texture: string = '/assets/textures/world.jpg';
+  @Input() public texture: string = '/assets/textures/texture.png';
   @Input() public cameraZ: number = 1;
   @Input() public fieldOfView: number = 1;
 
@@ -46,6 +46,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
   private degrees = 0;
 
 
+
   private sphere: THREE.Mesh = new THREE.Mesh(this.geometry, this.material);
 
   private orbital = new THREE.Mesh(
@@ -59,6 +60,8 @@ export class GlobeComponent implements OnInit, AfterViewInit {
 
   private scene!: THREE.Scene;
 
+  private controls;
+
 
   private createScene() {
     //Scene
@@ -69,11 +72,11 @@ export class GlobeComponent implements OnInit, AfterViewInit {
     this.orbital.position.y = 0;
 
 
-    const light = new THREE.PointLight(0xfffffff, 3, 450);
-    light.position.set(100, 100, 100);
+
+    const light = new THREE.PointLight(0xfffffff, 7, 900);
+    light.position.set(400, 400, 400);
     this.scene.add(light);
 
-    this.scene.add(this.orbital);
 
     //Camera
     let aspectRatio = this.canvas.clientWidth / this.canvas.clientHeight;
@@ -83,7 +86,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
       1,
       100
     );
-    this.camera.position.z = 99;
+    this.camera.position.z = 50;
     this.scene.rotateY(-1.2);
   }
 
@@ -109,6 +112,10 @@ export class GlobeComponent implements OnInit, AfterViewInit {
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
 
     let component = this;
+
+      this.controls = new OrbitControls(this.camera,this.renderer.domElement)
+
+    this.controls.update();
 
     (function render() {
       requestAnimationFrame(render);

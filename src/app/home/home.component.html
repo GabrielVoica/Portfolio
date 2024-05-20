@@ -1,12 +1,35 @@
+<div class="rrss">
+  <div class="select-theme" (click)="this.toggleSwitcher()">
+    <p>✨Theme switcher✨</p>
+  </div>
+  <div class="icon-wrapper">
+    <a href="https://github.com/GabrielVoica" class="github icon"></a>
+  </div>
+  <div class="icon-wrapper">
+    <a href="https://es.linkedin.com/in/gabriel-voica-0120bb20b" class="linkedin icon"></a>
+  </div>
+</div>
+<div class="theme-switcher" *ngIf="this.switcherVisible">
+  <p class="header">Select another theme!</p>
+  <p (click)="setTheme('')">Default</p>
+  <p (click)="setTheme('dark')">Dark</p>
+  <p class="caucas-item" (click)="setTheme('caucas')">Caucas</p>
+  <p class="color-madness-item" (click)="setTheme('color-madness')">Color madness</p>
+  <p class="uppercut-item" (click)="setTheme('uppercut')">Uppercut</p>
+  <p class="location-item" (click)="setTheme('location')">Location</p>
+</div>
 <div class="home-component">
   <div class="banner-container" #banner_container>
-  <app-home-banner #banner class="banner"></app-home-banner>
+    <app-home-banner #banner class="banner"></app-home-banner>
   </div>
 
-
-  <div #globe_container class="globe-container">
- <app-globe #globe id="globe"></app-globe>
-  </div>
- 
   <button #button class="view-site" (click)="moveItems()">See more</button>
 </div>
+
+<div class="version">v1.0.0</div>
+
+<div class="floating dot-1"></div>
+<div class="floating dot-2"></div>
+<div class="floating dot-3"></div>
+<div class="floating dot-4"></div>
+<div class="floating dot-5"></div>

@@ -3,17 +3,76 @@
     opacity: 0;
     transition: 1s opacity;
     animation: appear 1s forwards;
-    height: 95%;
+    height: 100%;
     color: white;
-    width: 90%;
+    width: 100%;
+    left: 0 !important;
     padding: 20px;
-    background: var(--main-color);
+    padding-left: 120px;
+    padding-top: 0px;
+
+
+    .content{
+      width: 50%;
+      height: 100%;
+      border-right: 1px solid var(--text-color-secondary);
+
+      h1{
+       background: var(--body-color);
+       padding: 10px;
+       width: fit-content;
+       border-radius: 10px;
+       color: var(--secondary);
+       margin: 5px;
+      }
+
+      h2{
+       background: var(--body-color);
+       width: fit-content;
+       padding: 10px;
+       max-width: 300px;
+       color: var(--secondary);
+       margin: 5px;
+       border-radius: 10px;
+       font-weight: 700;
+      }
+
+    }
+
+
+    #home-content{
+       overflow: hidden;
+       height: 100%;
+       width: 100%;
+       position: relative;
+      background: var(--main-color);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+
+    .section{
+      width: 100%;
+      border-radius: 10px;
+      height: 100%;
+      margin-top: 15px;
+      padding: 20px;
+      background: var(--main-color);
+    }
 
     .text-container{
         width: 100%;
         max-width: 600px;
     }
+
+    .app-games{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
 }
+
+
 
 @keyframes appear {
     100%{

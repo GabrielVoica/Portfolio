@@ -1,34 +1,135 @@
 @font-face {
-  font-family: "Henry";
-  src: url("/assets/fonts/Lobster-Regular.ttf");
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat-Regular.ttf");
 }
 
-
-:root{
-  --main-color: #008eff;
-  --home-banner-color: #008eff;
-  --body-color: rgb(161, 209, 255);
+body {
+  //Variables
+  --primary: white;
+  --secondary: rgb(61, 59, 69);
+  --home-banner-color: rgb(220, 220, 220);
+  --main-color: #333;
+  --main-color-blurred: #33333372;
+  --body-color: rgb(220, 220, 220);
+  --dot-color: rgba(100, 100, 100, 0.271);
+  --dot-color-secondary: rgba(89, 89, 89, 0.358);
+  --sidebar-background: linear-gradient(black,rgb(61, 59, 69));
+  --sidebar-background-secondary: rgb(183, 183, 208);
+  --text-color: rgb(51, 51, 51);
+  --text-color-secondary: rgb(95, 255, 167);
+  --button-primary: rgb(50, 50, 50);
+  --button-secondary: rgb(201, 201, 201);
+  --panel-shadow-color: rgba(96, 96, 96, 0.337);
+  --button-border-color: white;
+  --icon-color: black;
 }
 
-*{
+.dark{
+  --primary: rgb(61, 59, 69);
+  --secondary: white;
+  --home-banner-color: rgb(33, 29, 29);
+  --main-color: rgb(87, 86, 86);
+  --body-color: rgb(33, 29, 29);
+  --dot-color: rgba(212, 212, 212, 0.271);
+  --dot-color-secondary: rgba(214, 214, 214, 0.358);
+  --sidebar-background: linear-gradient(rgb(29, 25, 25),rgb(16, 16, 16));
+  --sidebar-background-secondary: rgb(49, 48, 48);
+  --text-color: rgb(197, 197, 197);
+  --text-color-secondary: rgb(0, 255, 115);
+  --button-primary: rgb(194, 194, 194);
+  --button-secondary: rgb(77, 77, 77);
+  --panel-shadow-color: rgba(206, 206, 206, 0.337);
+  --button-border-color: rgb(36, 36, 36);
+  --icon-color: rgb(255, 255, 255);
+}
+
+.caucas {
+  --primary: rgb(228, 168, 112);
+  --secondary: rgb(109, 53, 1);
+  --home-banner-color: rgb(83, 44, 0);
+  --main-color: rgb(248, 184, 155);
+  --body-color: rgb(248, 209, 164);
+  --dot-color: rgb(245, 201, 159);
+  --dot-color-secondary: rgba(238, 143, 106, 0.358);
+  --sidebar-background: linear-gradient(rgb(59, 27, 0),rgb(163, 86, 4));
+  --sidebar-background-secondary: rgb(255, 231, 178);
+  --text-color: rgb(255, 255, 255);
+  --text-color-secondary: rgb(102, 77, 61);
+  --button-primary: rgb(73, 35, 0);
+  --button-secondary: rgb(201, 201, 201);
+  --panel-shadow-color: rgba(96, 96, 96, 0.337);
+  --button-border-color: white;
+  --icon-color: black;
+}
+
+.color-madness {
+  --primary: rgb(255, 238, 0);
+  --secondary: rgb(0, 51, 255);
+  --home-banner-color: rgb(255, 0, 0);
+  --main-color: rgb(255, 0, 230);
+  --body-color: rgb(0, 255, 110);
+  --dot-color: rgb(0, 195, 255);
+  --dot-color-secondary: rgba(255, 183, 0, 0.358);
+  --sidebar-background: linear-gradient(rgb(64, 0, 0),rgb(204, 0, 255));
+  --sidebar-background-secondary: rgb(4, 255, 0);
+  --text-color: rgb(0, 0, 0);
+  --text-color-secondary: rgb(255, 251, 0);
+  --button-primary: rgb(0, 251, 255);
+  --button-secondary: rgb(37, 0, 204);
+  --panel-shadow-color: rgba(255, 0, 136, 0.337);
+  --button-border-color: rgb(81, 0, 255);
+  --icon-color: rgb(123, 0, 255);
+}
+
+.uppercut {
+  --primary: rgb(255, 255, 255);
+  --secondary: rgb(252, 116, 116);
+  --home-banner-color: rgb(236, 70, 70);
+  --main-color: rgb(255, 255, 255);
+  --body-color: rgb(254, 234, 234);
+  --dot-color: rgb(255, 255, 255);
+  --dot-color-secondary: rgba(255, 156, 156, 0.358);
+  --sidebar-background: linear-gradient(rgb(37, 0, 0),rgb(140, 0, 0));
+  --sidebar-background-secondary: rgb(255, 255, 255);
+  --text-color: rgb(97, 0, 0);
+  --text-color-secondary: rgb(255, 255, 255);
+  --button-primary: rgb(91, 0, 0);
+  --button-secondary: rgb(255, 255, 255);
+  --panel-shadow-color: rgba(255, 191, 191, 0.337);
+  --button-border-color: rgb(255, 168, 168);
+  --icon-color: rgb(233, 121, 121);
+}
+
+body * {
+  font-family: "Open Sans" !important;
+  font-weight: 500;
+}
+
+.black-theme {
+  --home-banner-color: rgb(10, 7, 48);
+  --main-color: #06233b;
+  --body-color: rgb(10, 6, 67);
+  --dot-color: rgb(52, 5, 52);
+  --dot-color-secondary: rgb(53, 3, 3);
+}
+
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   outline: none;
 }
 
-body{
+body {
   overflow-y: hidden;
   overflow-x: hidden;
   background: var(--body-color) !important;
 
-  p,h3{
+  p,
+  h3 {
     margin: 0px 10px;
   }
 }
-
-
-
 
 body,
 html {
@@ -36,10 +137,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg,rgb(109, 8, 8) 20%,rgb(70, 5, 5) 40%,rgb(0, 0, 0) 60%,rgb(0, 0, 0));
   font-family: Helvetica;
-
-
 
   app-home,
   app-projects,
@@ -51,7 +149,7 @@ html {
   }
 }
 
-app-home-content{
+app-home-content {
   width: 93%;
   height: 200%;
   background: white;

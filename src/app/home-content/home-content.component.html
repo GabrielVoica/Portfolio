@@ -1,7 +1,18 @@
 <div id="home-content">
 
+  <div class="content">
+  <h1>Hello world!</h1>
+  <h2>This section contains examples of mini projects i developed</h2>
+  <h2>Feel free to spin the wheel and play!</h2>
+  </div>
+
     <app-spin-wheel (gameEmitter)="setGame($event)"></app-spin-wheel>
 
-    <app-games [selectedGame]="selectedGame" ></app-games>
+    <app-games  class="app-games" [selectedGame]="selectedGame" ></app-games>
+
+</div>
+
+
+<div class="section">
 
 </div>
